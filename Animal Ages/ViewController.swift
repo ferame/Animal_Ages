@@ -14,7 +14,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    @IBOutlet var labelMain: UILabel!
+    
+    @IBOutlet var inputCatAge: UITextField!
+    
+    @IBAction func submitPressed(sender: AnyObject) {
+        print("Submit pressed")
+        //let catAge:Int? = Int(inputCatAge.text!)
+        var catAge = Int(inputCatAge.text!)!
+        
+        //labelMain.text = "Meow! Your Cat is \(7 * catAge!) years old."
+        catAge = catAge * 7
+        labelMain.text = "Meow! Your Cat is \(catAge) years old."
+        print("Label changed")
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
